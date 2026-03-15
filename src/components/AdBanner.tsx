@@ -21,23 +21,27 @@ export default function AdBanner({
   responsive = true,
   className = "",
 }: AdBannerProps) {
-  const adRef = useRef<HTMLModElement>(null);
-  const pushed = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const initialized = useRef(false);
 
   useEffect(() => {
-    if (pushed.current) return;
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-      pushed.current = true;
-    } catch {
-      // adsbygoogle not loaded yet
-    }
+    if (initialized.current) return;
+    initialized.current = true;
+
+    const timer = setTimeout(() => {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch {
+        // adsbygoogle not ready
+      }
+    }, 300);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className={`ad-container ${className}`}>
+    <div ref={containerRef} className={`ad-container ${className}`} key={slot}>
       <ins
-        ref={adRef}
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client="ca-pub-1206392565632592"
