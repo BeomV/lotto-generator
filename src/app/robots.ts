@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.beomv.com/lotto/sitemap.xml",
+    sitemap: "https://lotto.beomv.com/sitemap.xml",
   };
 }
