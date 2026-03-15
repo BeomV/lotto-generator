@@ -8,6 +8,7 @@ import StatisticsPanel from "@/components/StatisticsPanel";
 import LatestResult from "@/components/LatestResult";
 import Particles from "@/components/Particles";
 import AdBanner from "@/components/AdBanner";
+import Link from "next/link";
 
 type Tab = "generator" | "smart" | "statistics";
 
@@ -66,6 +67,22 @@ export default function Home() {
               : `1~${latestEpisode}회차 당첨번호 통계 분석 완료`}
           </p>
         </header>
+
+        <nav className="flex justify-center gap-3 py-2 text-sm">
+          <span className="text-white/80 font-semibold">번호생성</span>
+          <span className="text-white/20">|</span>
+          <Link href="/results" className="text-white/40 hover:text-white/80 transition-colors">
+            당첨결과
+          </Link>
+          <span className="text-white/20">|</span>
+          <Link href="/stats" className="text-white/40 hover:text-white/80 transition-colors">
+            통계분석
+          </Link>
+          <span className="text-white/20">|</span>
+          <Link href="/guide" className="text-white/40 hover:text-white/80 transition-colors">
+            가이드
+          </Link>
+        </nav>
 
         {/* 상단 타이틀 광고 */}
         <div className="max-w-2xl mx-auto px-4 py-4">
