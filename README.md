@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 로또번호생성
 
-## Getting Started
+역대 로또 6/45 당첨번호를 통계 분석하여 번호를 추천하는 웹 애플리케이션입니다.
 
-First, run the development server:
+## 주요 기능
 
+### 랜덤 번호 생성
+- 1~45 중 6개 번호를 무작위로 생성
+- 1~10게임 동시 생성 가능
+
+### AI 통계 분석 추천
+- 1회차부터 최신 회차까지 전체 데이터 기반 가중치 분석
+- 출현 빈도(30%) + 최근 트렌드(25%) + 미출현 리바운드(15%) + 홀짝/고저 균형 + 합계 범위 최적화
+- 핫 넘버 / 콜드 넘버 / 최근 50회 트렌드 표시
+
+### 통계 분석 대시보드
+- 45개 번호 출현 빈도 차트
+- 번호대별 분포 (1~10, 11~20, 21~30, 31~40, 41~45)
+- 홀짝 / 고저 비율 분석
+- 합계 범위 분석 (최소, 최대, 평균, 최빈 구간)
+- 연속번호 패턴 분석
+- 최근 10회 미출현 번호
+- 자주 함께 나오는 번호 쌍 Top 15
+
+### 최신 당첨결과
+- 최신 회차 당첨번호 및 보너스 번호 표시
+- 1~5등 당첨자 수 및 당첨금 표시
+
+## 기술 스택
+
+- **프레임워크**: Next.js 16 (App Router)
+- **언어**: TypeScript
+- **스타일**: Tailwind CSS 4
+- **UI**: Apple 글래스모피즘 + 3D 틸트 카드 + Canvas 파티클
+- **데이터**: 동행복권 API
+- **배포**: Vercel
+
+## 데이터 관리
+
+### 캐싱 구조
+- `src/data/episodes.json`에 역대 전체 당첨 데이터를 저장
+- API 요청 시 캐시 파일 + 신규 회차 delta만 추가 fetch
+- 매주 토요일 Vercel Cron Job으로 자동 갱신
+
+### 수동 데이터 갱신
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# 최신 회차까지 전체 다운로드
+npm run update-data
+
+# 특정 회차까지 다운로드
+npm run update-data 1220
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 실행 방법
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# 의존성 설치
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 개발 서버
+npm run dev
 
-## Learn More
+# 빌드
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# 프로덕션 실행
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 배포
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Vercel에 GitHub 연결 후 `git push`만 하면 자동 배포됩니다.
 
-## Deploy on Vercel
+`vercel.json`에 매주 토요일 00:00 UTC에 `/api/cron/update`를 호출하는 cron이 설정되어 있습니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 데이터 출처
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [동행복권](https://www.dhlottery.co.kr)
+
+## 주의사항
+
+본 서비스는 통계 참고용이며 당첨을 보장하지 않습니다.
