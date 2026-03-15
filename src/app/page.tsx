@@ -58,12 +58,12 @@ export default function Home() {
         {/* Header */}
         <header className="pt-14 pb-2 text-center">
           <h1 className="text-4xl md:text-5xl font-bold title-gradient tracking-tight">
-            로또번호생성
+            로또번호생성기
           </h1>
           <p className="text-white mt-2 text-sm">
             {loading
               ? "데이터 로딩 중..."
-              : `1~${latestEpisode}회차 분석완료`}
+              : `1~${latestEpisode}회차 당첨번호 통계 분석 완료`}
           </p>
         </header>
 
