@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "update-data": "node scripts/download-episodes.mjs"
+    "update-data": "node scripts/download-episodes.mjs",
+    "train-model": "python3 scripts/train-lstm.py"
   },
   "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"

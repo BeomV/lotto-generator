@@ -4,13 +4,14 @@ import { useState, useEffect } from "react";
 import { LottoEpisode, LottoApiResponse } from "@/types/lotto";
 import LottoGenerator from "@/components/LottoGenerator";
 import SmartPick from "@/components/SmartPick";
+import DeepPick from "@/components/DeepPick";
 import StatisticsPanel from "@/components/StatisticsPanel";
 import LatestResult from "@/components/LatestResult";
 import Particles from "@/components/Particles";
 import AdBanner from "@/components/AdBanner";
 import Link from "next/link";
 
-type Tab = "generator" | "smart" | "statistics";
+type Tab = "generator" | "smart" | "deep" | "statistics";
 
 export default function Home() {
   const [episodes, setEpisodes] = useState<LottoEpisode[]>([]);
@@ -48,7 +49,8 @@ export default function Home() {
   const tabs: { key: Tab; label: string }[] = [
     { key: "generator", label: "번호 생성" },
     { key: "smart", label: "AI 추천" },
-    { key: "statistics", label: "통계 분석" },
+    { key: "deep", label: "딥러닝" },
+    { key: "statistics", label: "통계" },
   ];
 
   return (
@@ -141,6 +143,7 @@ export default function Home() {
             <>
               {activeTab === "generator" && <LottoGenerator />}
               {activeTab === "smart" && <SmartPick episodes={episodes} />}
+              {activeTab === "deep" && <DeepPick episodes={episodes} />}
               {activeTab === "statistics" && (
                 <StatisticsPanel episodes={episodes} />
               )}

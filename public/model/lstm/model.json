@@ -1,0 +1,102 @@
+{
+  "format": "layers-model",
+  "generatedBy": "keras v3",
+  "convertedBy": "custom-converter",
+  "modelTopology": {
+    "class_name": "Sequential",
+    "config": {
+      "name": "sequential",
+      "layers": [
+        {
+          "class_name": "InputLayer",
+          "config": {
+            "batch_input_shape": [null, 10, 45],
+            "dtype": "float32",
+            "name": "input_layer"
+          }
+        },
+        {
+          "class_name": "LSTM",
+          "config": {
+            "name": "lstm",
+            "units": 128,
+            "activation": "tanh",
+            "recurrent_activation": "sigmoid",
+            "use_bias": true,
+            "return_sequences": true,
+            "return_state": false,
+            "go_backwards": false,
+            "stateful": false,
+            "unroll": false
+          }
+        },
+        {
+          "class_name": "Dropout",
+          "config": {
+            "name": "dropout",
+            "rate": 0.3
+          }
+        },
+        {
+          "class_name": "LSTM",
+          "config": {
+            "name": "lstm_1",
+            "units": 64,
+            "activation": "tanh",
+            "recurrent_activation": "sigmoid",
+            "use_bias": true,
+            "return_sequences": false,
+            "return_state": false,
+            "go_backwards": false,
+            "stateful": false,
+            "unroll": false
+          }
+        },
+        {
+          "class_name": "Dropout",
+          "config": {
+            "name": "dropout_1",
+            "rate": 0.3
+          }
+        },
+        {
+          "class_name": "Dense",
+          "config": {
+            "name": "dense",
+            "units": 64,
+            "activation": "relu",
+            "use_bias": true
+          }
+        },
+        {
+          "class_name": "Dense",
+          "config": {
+            "name": "dense_1",
+            "units": 45,
+            "activation": "sigmoid",
+            "use_bias": true
+          }
+        }
+      ]
+    },
+    "keras_version": "2.15.0",
+    "backend": "tensorflow"
+  },
+  "weightsManifest": [
+    {
+      "paths": ["group1-shard1of1.bin"],
+      "weights": [
+        { "name": "lstm/kernel", "shape": [45, 512], "dtype": "float32" },
+        { "name": "lstm/recurrent_kernel", "shape": [128, 512], "dtype": "float32" },
+        { "name": "lstm/bias", "shape": [512], "dtype": "float32" },
+        { "name": "lstm_1/kernel", "shape": [128, 256], "dtype": "float32" },
+        { "name": "lstm_1/recurrent_kernel", "shape": [64, 256], "dtype": "float32" },
+        { "name": "lstm_1/bias", "shape": [256], "dtype": "float32" },
+        { "name": "dense/kernel", "shape": [64, 64], "dtype": "float32" },
+        { "name": "dense/bias", "shape": [64], "dtype": "float32" },
+        { "name": "dense_1/kernel", "shape": [64, 45], "dtype": "float32" },
+        { "name": "dense_1/bias", "shape": [45], "dtype": "float32" }
+      ]
+    }
+  ]
+}
