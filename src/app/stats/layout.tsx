@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     "로또 번호 패턴",
     "로또 홀짝 비율",
     "로또 번호 조합 분석",
+    "로또번호생성기",
+    "로또 생성기",
+    "로또 1등 예측",
+    "로또 예상번호",
   ],
   alternates: {
     canonical: "/stats",

@@ -63,10 +63,13 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl font-bold title-gradient tracking-tight">
             로또번호생성기
           </h1>
+          <h2 className="sr-only">
+            무료 로또 번호 생성기, 당첨번호 통계 분석, 핫넘버 콜드넘버, AI 추천, LSTM 딥러닝 인공지능 예측
+          </h2>
           <p className="text-white mt-2 text-sm">
             {loading
               ? "데이터 로딩 중..."
-              : `1~${latestEpisode}회차 당첨번호 통계 분석 완료`}
+              : `1~${latestEpisode}회차 통계 분석 및 LSTM 딥러닝 예측 완료`}
           </p>
         </header>
 

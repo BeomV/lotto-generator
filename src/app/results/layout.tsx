@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     "이번주 로또 당첨번호",
     "로또 역대 당첨번호",
     "로또 번호 확인",
+    "로또 1등 당첨번호",
+    "로또번호생성기",
+    "로또 생성기",
+    "로또 1등 예측",
   ],
   alternates: {
     canonical: "/results",

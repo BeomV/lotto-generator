@@ -281,6 +281,21 @@ export default function GuidePage() {
             </div>
           </GlassCard>
 
+          {/* AI 딥러닝 번호 예측 */}
+          <GlassCard className="p-6 md:p-8">
+            <h2 className="text-xl font-semibold text-white/80 mb-4">
+              AI 딥러닝(LSTM) 번호 예측 알고리즘
+            </h2>
+            <div className="text-sm text-white/50 space-y-3 leading-relaxed">
+              <p>
+                최근 인공지능 기술의 발전으로 로또 당첨번호 분석에도 <strong>딥러닝(Deep Learning)</strong> 모델이 활용되고 있습니다. 특히 시간의 흐름에 따른 시계열 데이터 패턴 분석에 특화된 <strong>LSTM(Long Short-Term Memory)</strong> 알고리즘이 주목받고 있습니다.
+              </p>
+              <p>
+                LSTM 인공지능 신경망은 1회차부터 최신 회차까지의 역대 당첨번호 데이터를 순차적으로 학습하여, 다음 회차에 등장할 확률이 높은 번호를 예측합니다. 본 로또번호생성기에서는 브라우저 환경에서 직접 구동되는 최신 AI 딥러닝 예측 추천 번호를 무료로 제공하고 있습니다.
+              </p>
+            </div>
+          </GlassCard>
+
           {/* FAQ */}
           <GlassCard className="p-6 md:p-8">
             <h2 className="text-xl font-semibold text-white/80 mb-4">

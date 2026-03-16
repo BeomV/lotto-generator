@@ -4,11 +4,11 @@ import "./globals.css";
 const SITE_URL = "https://lotto.beomv.com";
 const SITE_NAME = "로또번호생성기";
 const DESCRIPTION =
-  "역대 로또 당첨번호 통계 분석 기반 번호 생성기. 1회~최신회차 출현 빈도, 핫/콜드 넘버 분석, AI 추천 번호까지 무료 제공.";
+  "역대 로또 당첨번호 통계 분석 및 최신 딥러닝(LSTM) 인공지능 모델 기반 번호 생성기. 1회~최신회차 출현 빈도, 핫/콜드 넘버 분석, 딥러닝 예측 추천 번호까지 무료 제공.";
 
 export const metadata: Metadata = {
   title: {
-    default: "로또번호생성기 - 통계 분석 기반 AI 추천 번호",
+    default: "로또번호생성기 - 통계 분석 및 딥러닝(LSTM) 기반 AI 추천 번호",
     template: "%s | 로또번호생성기",
   },
   description: DESCRIPTION,
@@ -16,8 +16,20 @@ export const metadata: Metadata = {
     "로또",
     "로또번호생성",
     "로또번호생성기",
+    "로또번호 생성기",
+    "로또생성기",
+    "로또 생성기",
+    "무료 로또번호생성기",
+    "무료 로또 생성기",
+    "로또 1등 예측",
+    "로또 AI 1등 예측",
     "로또 번호 추천",
     "로또 AI 추천",
+    "로또 딥러닝",
+    "로또 LSTM",
+    "로또 인공지능",
+    "로또 예측",
+    "로또 예상번호",
     "로또 통계",
     "로또 분석",
     "로또 당첨번호",
@@ -31,7 +43,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "로또번호생성기 - 통계 분석 기반 AI 추천 번호",
+    title: "로또번호생성기 - 통계 분석 및 딥러닝(LSTM) 기반 AI 추천 번호",
     description: DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -40,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "로또번호생성기 - 통계 분석 기반 AI 추천 번호",
+    title: "로또번호생성기 - 통계 분석 및 딥러닝(LSTM) 기반 AI 추천 번호",
     description: DESCRIPTION,
   },
   robots: {

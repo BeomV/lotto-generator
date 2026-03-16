@@ -47,10 +47,10 @@ export default function DeepPick({ episodes }: DeepPickProps) {
   return (
     <GlassCard className="p-6 md:p-8">
       <h2 className="text-lg font-semibold text-white/80">
-        딥러닝 번호 예측
+        AI 딥러닝(LSTM) 번호 예측
       </h2>
       <p className="text-xs text-white/25 mt-1 mb-6">
-        LSTM 신경망이 {episodes.length}회차 패턴을 분석하여 번호를 예측합니다
+        인공지능 LSTM 신경망 모델이 {episodes.length}회차까지의 누적 당첨 패턴을 시계열 분석하여 최적의 번호를 예측합니다.
       </p>
 
       {/* 모델 정보 */}
